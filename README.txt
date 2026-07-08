@@ -1,19 +1,11 @@
-To render Bangla / Hindi / Urdu / Arabic captions correctly in generated
-images (meme, fakechat, friendship card), download a font that covers that
-script and save it here as exactly:
+Drop real meme template images here as <name>.jpg or <name>.png
+(for example: drake.jpg, distracted-boyfriend.jpg, this-is-fine.jpg)
 
-    script_font.ttf
+No template images are bundled with this project — they weren't included
+so as not to bundle other people's copyrighted meme images into your repo.
+Grab your own from a source you have rights to use, or generate simple
+ones yourself.
 
-Recommended (free, covers Bangla + Latin):
-    Google Fonts -> "Noto Sans Bengali"
-    https://fonts.google.com/noto/specimen/Noto+Sans+Bengali
-
-For Arabic/Urdu specifically, "Noto Naskh Arabic" or "Noto Sans Arabic"
-render better. You can only have one script_font.ttf active at a time in
-this simple setup — if you need multiple scripts well-rendered
-simultaneously, edit utils/image_gen.py's get_font() to pick a font based
-on the detected script of the text.
-
-Without this file, non-Latin text will likely render as empty boxes (□□□)
-in generated images — English/Latin captions work fine either way using the
-bundled DejaVu Sans Bold font.
+/meme <name> | <top text> | <bottom text> will use "<name>.jpg" if it exists
+here. If it doesn't exist, the bot falls back to a plain dark background so
+the command still works out of the box.
